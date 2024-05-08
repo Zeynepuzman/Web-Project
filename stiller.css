@@ -1,0 +1,12 @@
+
+#abc h1:first-of-type {
+    margin-top: 100px;
+    color: palevioletred;
+}
+
+#cdf h1:nth-child(2) {
+    color: grey;
+}
+#fff h1:nth-child(3) {
+    color: grey;
+}
