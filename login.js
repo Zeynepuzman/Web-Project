@@ -4,7 +4,7 @@ function isValid(frm) {
     var kadi = frm.kadi.value;
 
     var sifre = frm.sifre.value;
-
+    
     var atpos=email.indexOf("@");
     var dotpos=email.lastIndexOf(".");
 
@@ -22,7 +22,7 @@ function isValid(frm) {
         return false;
 
     }
-    return true;
+    return true;
 
 
-}   
+}
