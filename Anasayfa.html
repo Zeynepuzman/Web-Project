@@ -15,8 +15,10 @@
   <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
  
   <title>Zeynep Uzman</title>
+  
 </head>
-    <body background="" style="text-align: center;">
+    <body style="text-align: center;">
+      <div id="welcome-screen">Beni Ve Şehrimi Tanımaya Hoş Geldiniz</div>
         <section id="cover">
           <div class="container">
             <div class="row">
@@ -50,7 +52,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="iletisim.html">İLETİŞİM</a>
                     </li>
-                    <li class="nav-item" id="logindüzenleme">
+                    <li class="nav-item">
                       <a class="nav-link" href="login.html" >LOGIN</a>
                     </li>
                   </ul>
@@ -65,13 +67,13 @@
       
       <div>
         <div class="col-sm-12" id="bilgi1">
-          <h1 > ZEYNEP UZMAN </h1>
+          <h2 > ZEYNEP UZMAN </h2>
         </div>
         <div class="col-sm-12" id="bilgi2">
-          <h1 > Sakarya Üniversitesi</h1>
+          <h2 > Sakarya Üniversitesi</h2>
         </div>
         <div class="col-sm-12"id="bilgi3">
-          <h1> Bilgisayar Mühendisliği</h1>
+          <h2> Bilgisayar Mühendisliği</h2>
         </div>
         <div class="col-sm-12">
           <div class="col-sm-12">
@@ -80,28 +82,24 @@
     
               
                
-                <h1 id="hakkimda"><strong>
+                <h2 id="hakkimda"><strong>
                     Hakkımda
-                  </strong></h1><br>
-                <p class="yazi" style="font-size: 25px; margin-bottom: 15px; margin-top:15px;"> Merhaba, ben Zeynep Uzman.30/01/2004'te dünyaya geldim.Ankara Güdül/Sorgunluyum.
+                  </strong></h2><br>
+                <p class="yazi"> Merhaba, ben Zeynep Uzman.30/01/2004'te dünyaya geldim.Ankara Güdül/Sorgunluyum.
                   Annem babam ve kız kardeşimden oluşan 4 kişilik çekirdek bir aileye sahibim.2023'den beri Sakarya Üniversitesi Bilgisayar ve Bilişim Fakültesi'nde Bilgisayar
                  Mühendisliği öğrencisiyim.Şu an 1. sınıf olarak eğitimime devam etmekteyim.
                 </p>
-                <h1 id="hakkimda" style="margin-top: 15px;"><strong>
+                <h2 id="hakkimda"><strong>
                     Hobilerim
-                  </strong></h1><br>
-                <p style="font-size: 25px; margin-bottom: 15px; margin-top:15px;">
-                  Hobilerim arasında kitap okumak ve o kitabı etrafımdaki kişilerle birlikte yorumlamak yer alıyor ve insanlara okuyup beğendiğim kitapları önermeyi çok seviyorum.
+                  </strong></h2><br>
+                <p  class="hakkimda1" >
+                  Hobilerim arasında kitap okumak ve o kitabı etrafımdaki kişilerle birlikte yorumlamak yer alıyor ve insanlara okuyup beğendiğim kitapları önermeyi çok seviyorum.Bisiklete binmeyi ve buz pateni yapmayı çok seviyorum.
                   Aynı zamanda voleybol oynamayı ve voleybol maçlarını da takip etmeyi çok seviyorum.Özellikle Kadın Milli Voleybol Maçlarını takip etmek çok heyecanlı oluyor.
-                  2023 Avrupa Kadınlar Voleybol maçlarını kazandığımız zaman çok mutlu olmuştum.
+                  2023 Avrupa Kadınlar Voleybol maçlarını kazandığımız zaman çok mutlu olmuştum.Bu sezon da maçları yakından takip etmeye devam ediyorum.
                   
                 </p>
-                <img src="... " style="text-align: center;"> <br> <br>
+                <br> <br>
     
-    
-    
-    
-             
             </div>
         </article>
         </div>
@@ -114,13 +112,7 @@
           Web-Teknolojileri-Projesi © Zeynep Uzman 2024
         </footer>
       </section>
-      <!--*******************************************************************************************************************************-->
-    
-    
-      <!--*******************************************************************************************************************************-->
-
-
-
+      
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
@@ -130,5 +122,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>   
+      <script>
+        // Hoşgeldiniz ekranını 5 saniye sonra gizlemek ve anasayfa kısmına yönlendirmek için JavaScript
+        setTimeout(() => {
+            document.getElementById('welcome-screen').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 </html>

@@ -90,7 +90,7 @@ const APIController = (function() {
 // UI Module
 const UIController = (function() {
 
-    //object to hold references to html selectors
+     // HTML seçicilere referansları tutmak için obje
     const DOMElements = {
         selectGenre: '#select_genre',
         selectPlaylist: '#select_playlist',
@@ -103,7 +103,7 @@ const UIController = (function() {
     //public methods
     return {
 
-        //method to get input fields
+         // input alanlarını almak için metot
         inputField() {
             return {
                 genre: document.querySelector(DOMElements.selectGenre),
@@ -114,7 +114,7 @@ const UIController = (function() {
             }
         },
 
-        // need methods to create select list option
+        // select listesi oluşturmak için metot
         createGenre(text, value) {
             const html = `<option value="${value}">${text}</option>`;
             document.querySelector(DOMElements.selectGenre).insertAdjacentHTML('beforeend', html);
@@ -125,17 +125,17 @@ const UIController = (function() {
             document.querySelector(DOMElements.selectPlaylist).insertAdjacentHTML('beforeend', html);
         },
 
-        // need method to create a track list group item 
+       // şarkı listesi grubu öğesi oluşturmak için metot 
         createTrack(id, name) {
             const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
             document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
         },
 
-        // need method to create the song detail
+        // şarkı detayını oluşturmak için metot
         createTrackDetail(img, title, artist) {
 
             const detailDiv = document.querySelector(DOMElements.divSongDetail);
-            // any time user clicks a new song, we need to clear out the song detail div
+             // kullanıcı yeni bir şarkıya tıkladığında, şarkı detay div'ini temizlememiz gerekiyor
             detailDiv.innerHTML = '';
 
             const html = 
@@ -183,69 +183,69 @@ const UIController = (function() {
 
 const APPController = (function(UICtrl, APICtrl) {
 
-    // get input field object ref
+    // input alanı obje referansını al
     const DOMInputs = UICtrl.inputField();
 
-    // get genres on page load
+     // sayfa yüklendiğinde türleri al
     const loadGenres = async () => {
-        //get the token
+         // token'ı al
         const token = await APICtrl.getToken();           
-        //store the token onto the page
+       // token'ı sayfaya kaydet
         UICtrl.storeToken(token);
-        //get the genres
+         // türleri al
         const genres = await APICtrl.getGenres(token);
-        //populate our genres select element
+        // tür select elemanını doldur
         genres.forEach(element => UICtrl.createGenre(element.name, element.id));
     }
 
-    // create genre change event listener
+   // tür değişim olay dinleyicisi oluştur
     DOMInputs.genre.addEventListener('change', async () => {
-        //reset the playlist
+         // playlist'i sıfırla
         UICtrl.resetPlaylist();
-        //get the token that's stored on the page
+          // sayfada saklanan token'ı al
         const token = UICtrl.getStoredToken().token;        
-        // get the genre select field
+         // tür select alanını al
         const genreSelect = UICtrl.inputField().genre;       
-        // get the genre id associated with the selected genre
+        // seçilen türle ilişkili tür id'sini al
         const genreId = genreSelect.options[genreSelect.selectedIndex].value;             
-        // ge the playlist based on a genre
+        // türe göre playlist'i al
         const playlist = await APICtrl.getPlaylistByGenre(token, genreId);       
-        // create a playlist list item for every playlist returned
+       // dönen her bir playlist için bir playlist list öğesi oluştur
         playlist.forEach(p => UICtrl.createPlaylist(p.name, p.tracks.href));
     });
      
 
-    // create submit button click event listener
+    // submit butonuna tıklama olay dinleyicisi oluştur
     DOMInputs.submit.addEventListener('click', async (e) => {
-        // prevent page reset
+        // sayfa yenilemesini engelle
         e.preventDefault();
-        // clear tracks
+        // şarkıları temizle
         UICtrl.resetTracks();
-        //get the token
+        // token'ı al
         const token = UICtrl.getStoredToken().token;        
-        // get the playlist field
+        // playlist alanını al
         const playlistSelect = UICtrl.inputField().playlist;
-        // get track endpoint based on the selected playlist
+        // seçilen playlist'e dayalı track endpoint'ini al
         const tracksEndPoint = playlistSelect.options[playlistSelect.selectedIndex].value;
-        // get the list of tracks
+        // şarkı listesini al
         const tracks = await APICtrl.getTracks(token, tracksEndPoint);
-        // create a track list item
+        // şarkı listesi öğesi oluştur
         tracks.forEach(el => UICtrl.createTrack(el.track.href, el.track.name))
         
     });
 
-    // create song selection click event listener
+     // şarkı seçimi için tıklama olay dinleyicisi oluştur
     DOMInputs.tracks.addEventListener('click', async (e) => {
-        // prevent page reset
+        // sayfa yenilemesini engelle
         e.preventDefault();
         UICtrl.resetTrackDetail();
-        // get the token
+        // token'ı al
         const token = UICtrl.getStoredToken().token;
-        // get the track endpoint
+       // şarkı endpoint'ini al
         const trackEndpoint = e.target.id;
-        //get the track object
+        // şarkı objesini al
         const track = await APICtrl.getTrack(token, trackEndpoint);
-        // load the track details
+       // şarkı detaylarını yükle
         UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name);
     });    
 
@@ -258,5 +258,5 @@ const APPController = (function(UICtrl, APICtrl) {
 
 })(UIController, APIController);
 
-// will need to call a method to load the genres on page load
+// türleri sayfa yüklendiğinde yüklemek için bir metot çağırmanız gerekecek
 APPController.init();
