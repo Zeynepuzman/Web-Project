@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="stiller.css">
@@ -65,39 +64,22 @@
 <p>İlgi alanlarım arasında bir çok şey yer almakta.Kitap okumak,okuduğum kitapları bir başkasıyla tartışıp farklı fikirler edinmek,film ve dizi izlemek,müzik dinlemek,voleybol maçı oynamak ve voleybol maçlarını izlemeye bayılıyorum.
   Harry Potter serisi en sevdiğim seriler arasında yer alıyor mesela.Bir şeylerin üzerinde plan yapmaktansa bir şeyleri rastgele keşfetmek daha çok ilgimi çekiyor.
   Önüme çıkan herhangi filmi ya da diziyi izlemek ya da herhangi bir anda kulak misafiri olduğum şarkıları bulup dinlemek aşırı hoşuma gidiyor.Daha sonrasında ise keşfettiğim film,dizi,müzikleri başkaları ile 
-  paylaşmak ve onların bunları çok beğenmesi beni çok mutlu ediyor.O yüzden size de rastgele müzik seçebileceğiniz bir seçenek bırakıyorum.Umarım çıkan müziği çok beğenirsiniz ve daha sonrada dinlemeye devam edersiniz.İyi eğlenceler
+  paylaşmak ve onların bunları çok beğenmesi beni çok mutlu ediyor.O yüzden size de izleyebileceiğiniz animasyonlar ve filmler bırakıyorum.Umarım çıkan müziği çok beğenirsiniz ve daha sonrada dinlemeye devam edersiniz.İyi eğlenceler
 </p>
 </div>
-<div class='container'>        
-  <form action=''>
-      
-      <input type='hidden' id='hidden_token'>
-      <div class='col-sm-6 form-group row mt-4 px-0'>
-          <label for='Genre' class='form-label col-sm-2'>Tür:</label>
-          <select name='' id='select_genre' class='form-control form-control-sm col-sm-10'>                 
-          </select>
-      </div>
-      <div class='col-sm-6 form-group row px-0'>
-          <label for='Genre' class='form-label col-sm-2'>Playlist:</label>
-          <select name='' id='select_playlist' class='form-control form-control-sm col-sm-10'>
-                               
-          </select>
-      </div>                  
-      <div class='col-sm-6 row form-group px-0'>
-          <button type='submit' id='btn_submit' class='btn btn-success col-sm-12'>Ara</button>
-      </div>          
-  </form>        
-  <div class='row'>
-      <div class='col-sm-6 px-0'>
-          <div class='list-group song-list'>
-              
-          </div>                                             
-      </div>
-      <div class='offset-md-1 col-sm-4' id='song-detail'>                
-      </div>
-  </div>   
-</div>
-    <body background="" style="text-align: center;">
+<h1>Favori Filmlerim</h1>
+<br><br>
+<div id="movies"></div>
+<button id="getMoviesButton" class="btn btn-primary">Favori Filmlerimi Getir</button>
+<button id="hideMoviesButton" class="btn btn-secondary" style="display:none; padding-top: 10px;">Filmleri Gizle</button>
+
+<script src="script.js"></script>
+ <script>
+       
+        
+    </script>
+
+    <body style="text-align: center;">
         <section id="cover">
           <div class="container">
             <div class="row">
@@ -152,6 +134,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src='api.js' type='text/javascript'></script>
   </body>
   </html>
