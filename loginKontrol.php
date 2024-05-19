@@ -28,7 +28,7 @@ if (isset($_POST['kadi']) && isset($_POST['sifre'])) { // form gönderilmiş mi
 <h2 id="loginbaslik">Başarıyla giriş yaptınız. Şimdi içeriğe ulaşabilirsiniz.</h2>
 
 
-<h1 id="loginbaslik" style="text-align=center;"><a id="loginbaslik" href="Anasayfa.html">ANASAYFAYA GİT</a></h1>
+<h1 id="loginbaslik" style="text-align=center;"><a id="loginbaslik" href="index.html">ANASAYFAYA GİT</a></h1>
 
 
 </body>
